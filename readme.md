@@ -5,11 +5,18 @@ This is a readme for project 3 in the class T-764-DATA
 ## Installation
 
 ---
-
-Install Python (you do not need conda for this)
-source venv/bin/activate (inside the main directory)
-Pip install pipenv
+```
+  Install Python (you do not need conda for this)
+```
+```
+  source venv/bin/activate (inside the main directory)
+```
+```  
+  Pip install pipenv
+```
+```
 pip install -r requirements.txt
+```
 
 ## The scraper
 
