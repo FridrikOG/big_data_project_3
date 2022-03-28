@@ -6,13 +6,13 @@ This is a readme for project 3 in the class T-764-DATA
 
 ---
 ```
-  Install Python (you do not need conda for this)
+Install Python (you do not need conda for this)
 ```
 ```
-  source venv/bin/activate (inside the main directory)
+source venv/bin/activate (inside the main directory)
 ```
 ```  
-  Pip install pipenv
+pip install pipenv
 ```
 ```
 pip install -r requirements.txt
