@@ -4,9 +4,9 @@ import re
 import pymongo
 
 
-def getPrices(hun):
+def get_prices(hun):
     names = hun.findAll("td", {"class": "nafn"})
-    datesCaught = hun.findAll("td", {"class": "dags"})
+    dates_caught = hun.findAll("td", {"class": "dags"})
     links = []
     prices = hun.findAll("td", {"class": "verd"})
     lis = []
@@ -15,7 +15,7 @@ def getPrices(hun):
         # Name is fine straight from mbl
         name = names[i].text.strip()
         # Date needs to be today, as we'd run this every day
-        date = datesCaught[i].text.strip()
+        date = dates_caught[i].text.strip()
         # Price
         price = prices[i].text.strip()
         # Slice the last 6 character off to get rid of kr/kg and the whitespace infront
@@ -59,7 +59,7 @@ def get_fish_prices(fish_link):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
     f = requests.get(fish_link, headers=headers).text
     hun = BeautifulSoup(f, 'html.parser')
-    value = getPrices(hun)
+    value = get_prices(hun)
     return value
 
 # Gets the name, date, and price per kilo of catches in Iceland
