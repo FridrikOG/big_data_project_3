@@ -6,8 +6,10 @@ bucket = "ru"
 
 print("Current path ", pathlib.Path().resolve())
 
+
 def writeFileToInflux():
-    client = InfluxDBClient(url="http://localhost:8086", token="1udCMOFcFml-OEM-k9lHBbHLZFXzHjV8oTSqLeQ0GO5H7Y2ls6gSVRHOXxKe51I1w-cc09YZMYiu5QLsVL-AnA==", org="RU")
+    client = InfluxDBClient(url="http://localhost:8086",
+                            token="1udCMOFcFml-OEM-k9lHBbHLZFXzHjV8oTSqLeQ0GO5H7Y2ls6gSVRHOXxKe51I1w-cc09YZMYiu5QLsVL-AnA==", org="RU")
 
     write_api = client.write_api(write_options=SYNCHRONOUS)
     query_api = client.query_api()
@@ -22,11 +24,12 @@ def writeFileToInflux():
     for table in tables:
         print(table)
         for row in table.records:
-            print (row.values)
+            print(row.values)
 
 
 def main():
     print("In main")
     writeFileToInflux()
+
 
 main()
